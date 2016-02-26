@@ -1,0 +1,15 @@
+{
+  "name": "unibet-ambari",
+  "version": "0.1.0",
+  "author": "unibet",
+  "summary": null,
+  "license": "Apache-2.0",
+  "source": "",
+  "project_page": null,
+  "issues_url": null,
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"},
+    {"name":"puppetlabs-inifile","version_requirement":">= 1.0.0"},
+    {"name":"maestrodev-wget","version_requirement":"> 1.0.0"}
+  ]
+}

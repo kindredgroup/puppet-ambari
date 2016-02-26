@@ -1,0 +1,12 @@
+*.lock
+.gems/
+.bundle/
+.librarian/
+.tmp/
+spec/fixtures/
+*.swp
+.vagrant/
+.kitchen/
+.kitchen.local.yml
+reports/
+/pkg
