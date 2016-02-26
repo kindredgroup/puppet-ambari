@@ -9,6 +9,7 @@ class ambari::server (
   $db_username            = undef,
   $db_password            = undef,
   $db_mysql_driver_url    = $::ambari::params::jdbc_driver_url,
+  $db_manage_installation = false,
   $settings               = {}
 ) inherits ::ambari::params {
 

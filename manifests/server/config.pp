@@ -5,10 +5,10 @@ class ambari::server::config (
 ) {
 
   file { '/etc/ambari-server/conf/ambari.properties':
-    ensure  => file,
-    owner   => $owner,
-    group   => $owner,
-    mode    => '0644'
+    ensure => file,
+    owner  => $owner,
+    group  => $owner,
+    mode   => '0644'
   }
 
   $defaults = {
