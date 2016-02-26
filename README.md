@@ -1,5 +1,9 @@
 # ambari
 
+[![Build Status](https://secure.travis-ci.org/unibet/puppet-ambari.png)](http://travis-ci.org/unibet/puppet-ambari)
+[![Puppet Forge](https://img.shields.io/puppetforge/v/unibet/ambari.svg)](https://forge.puppetlabs.com/unibet/ambari)
+[![Puppet Forge](https://img.shields.io/puppetforge/f/unibet/ambari.svg)](https://forge.puppetlabs.com/unibet/ambari)
+
 #### Table of Contents
 
 1. [Overview](#overview)
