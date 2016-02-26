@@ -31,8 +31,11 @@ class ambari::server (
       class { '::ambari::server::db::mysql':
         manage_installation => $db_manage_installation,
         jdbc_driver_url     => $db_mysql_driver_url
-      } ->
-      Class['::ambari::server::setup']
+      }
+      if $initial_install {
+        Class['::ambari::server::db::mysql'] ->
+        Class['::ambari::server::setup']
+      }
     }
     default: {}
   }

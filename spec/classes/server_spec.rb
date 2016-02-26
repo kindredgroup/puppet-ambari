@@ -26,6 +26,36 @@ describe "ambari::server" do
         it { is_expected.to compile }
         it { should contain_class('ambari::repo') }
       end
+
+      context 'with use_repo => false' do
+        let(:params) do
+          {
+            :use_repo => false
+          }
+        end
+        it { is_expected.to compile }
+        it { should_not contain_class('ambari::repo') }
+      end
+
+      context 'with db_backend => mysql' do
+        let(:params) do
+          {
+            :db_backend => 'mysql'
+          }
+        end
+        it { is_expected.to compile }
+        it { should contain_class('ambari::server::db::mysql') }
+      end
+
+      context 'with initial_install => true' do
+        let(:params) do
+          {
+            :initial_install => true
+          }
+        end
+        it { is_expected.to compile }
+        it { should contain_class('ambari::server::setup') }
+      end
     end
 
   end
