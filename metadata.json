@@ -2,14 +2,28 @@
   "name": "unibet-ambari",
   "version": "0.1.0",
   "author": "unibet",
-  "summary": null,
+  "summary": "Puppet module to manage Apache Ambari",
   "license": "Apache-2.0",
-  "source": "",
-  "project_page": null,
-  "issues_url": null,
+  "source": "https://github.com/unibet/puppet-ambari.git",
+  "project_page": "https://github.com/unibet/puppet-ambari",
+  "issues_url": "https://github.com/unibet/puppet-ambari/issues",
   "dependencies": [
     {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"},
     {"name":"puppetlabs-inifile","version_requirement":">= 1.0.0"},
     {"name":"maestrodev-wget","version_requirement":"> 1.0.0"}
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "6"
+      ]
+    },
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "6"
+      ]
+    }
   ]
 }
