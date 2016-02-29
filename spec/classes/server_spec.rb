@@ -15,6 +15,10 @@ describe "ambari::server" do
       context 'with defaults for all parameters' do
         it { is_expected.to compile }
         it { should_not contain_class('amabari::repo') }
+        if osfamily == 'RedHat'
+          it { should contain_service('ambari-server').with_hasstatus(false) }
+          it { should_not contain_service('ambari-server').with_pattern(nil) }
+        end
       end
 
       context 'with use_repo => true' do
