@@ -4,4 +4,5 @@ class ambari::params {
   $service_name = 'ambari-server'
   $service_ensure = 'running'
   $service_enable = true
+  $agent_pkg_name = 'ambari-agent'
 }
