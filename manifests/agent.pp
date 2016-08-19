@@ -1,14 +1,18 @@
 class ambari::agent(
-  $use_repo     = false,
-  $package_name = $::ambari::params::agent_pkg_name ) {
+  $package_name              = $::ambari::params::agent_pkg_name,
+  $ambari_server             = 'localhost',
+  $ambari_server_port        = '8440',
+  $ambari_server_secure_port = '8441',
+  $service_name              = $::ambari::params::agent_service_name,
+  $service_ensure            = $::ambari::params::agent_service_ensure,
+  $service_enable            = $::ambari::params::agent_service_enable,
+  $use_repo                  = $::ambari::params::agent_use_repo, ) inherits ::ambari::params {
 
-  if str2bool($use_repo) {
-    contain ::ambari::repo
-    Class['::ambari::repo'] -> Package[$package_name]
-  }
+  contain ::ambari::agent::install
+  contain ::ambari::agent::config
+  contain ::ambari::agent::service
 
-  package { $package_name:
-    ensure => installed,
-  }
-
+  Class[::ambari::agent::install] ->
+  Class[::ambari::agent::config] ->
+  Class[::ambari::agent::service]
 }
