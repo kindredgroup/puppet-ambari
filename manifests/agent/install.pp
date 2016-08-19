@@ -6,7 +6,7 @@ class ambari::agent::install() {
   }
 
   package { $::ambari::agent::package_name:
-    ensure => installed,
+    ensure => $::ambari::agent::package_ensure,
   }
 
 }
