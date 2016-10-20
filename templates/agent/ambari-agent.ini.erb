@@ -19,7 +19,7 @@ secured_url_port=<%= @ambari_server_secure_port %>
 
 [agent]
 prefix=/var/lib/ambari-agent/data
-tmp_dir=/var/lib/ambari-agent/data/tmp
+tmp_dir=<%= @tmp_dir %>
 ;loglevel=(DEBUG/INFO)
 loglevel=INFO
 data_cleanup_interval=86400

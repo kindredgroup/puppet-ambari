@@ -9,5 +9,6 @@ class ambari::params {
   $agent_service_name = 'ambari-agent'
   $agent_service_ensure = 'running'
   $agent_service_enable = true
+  $agent_tmp_dir = '/var/lib/ambari-agent/data/tmp'
   $agent_use_repo = true
 }
