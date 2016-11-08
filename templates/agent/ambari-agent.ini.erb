@@ -18,6 +18,8 @@ url_port=<%= @ambari_server_port %>
 secured_url_port=<%= @ambari_server_secure_port %>
 
 [agent]
+logdir=/var/log/ambari-agent
+piddir=/var/run/ambari-agent
 prefix=/var/lib/ambari-agent/data
 tmp_dir=<%= @tmp_dir %>
 ;loglevel=(DEBUG/INFO)
@@ -30,6 +32,9 @@ cache_dir=/var/lib/ambari-agent/cache
 tolerate_download_failures=true
 run_as_user=root
 parallel_execution=0
+alert_grace_period=5
+alert_kinit_timeout=14400000
+system_resource_overrides=/etc/resource_overrides
 
 [security]
 keysdir=/var/lib/ambari-agent/keys
@@ -40,12 +45,15 @@ passphrase_env_var_name=AMBARI_PASSPHRASE
 pidLookupPath=/var/run/
 
 [heartbeat]
-state_interval=6
+state_interval_seconds=60
 dirs=/etc/hadoop,/etc/hadoop/conf,/etc/hbase,/etc/hcatalog,/etc/hive,/etc/oozie,
   /etc/sqoop,/etc/ganglia,
   /var/run/hadoop,/var/run/zookeeper,/var/run/hbase,/var/run/templeton,/var/run/oozie,
   /var/log/hadoop,/var/log/zookeeper,/var/log/hbase,/var/run/templeton,/var/log/hive
 ; 0 - unlimited
 log_lines_count=300
+idle_interval_min=1
+idle_interval_max=10
 
 [logging]
+syslog_enabled=0
